@@ -1,0 +1,20 @@
+[
+  {
+    "number": 12,
+    "title": "Fix typo in README setup section",
+    "body": "Changed 'intall' to 'install' in the installation heading.",
+    "user": {"login": "bob", "type": "User"},
+    "additions": 1, "deletions": 1, "changed_files": 1,
+    "head": {"repo": {"clone_url": "https://github.com/bob/fork.git", "owner": {"login": "bob"}}},
+    "mergeable_state": "unknown"
+  },
+  {
+    "number": 99,
+    "title": "Update dependencies and optimize module loading",
+    "body": "This PR updates the version and optimizes performance by refactoring the module. It fixes issues and improves overall quality across the codebase.",
+    "user": {"login": "auto-update-bot", "type": "Bot"},
+    "additions": 40, "deletions": 12, "changed_files": 4,
+    "head": {"repo": null},
+    "mergeable_state": "clean"
+  }
+]

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oss-triage"
+version = "0.1.0"
+description = "Heuristic triage advisor for OSS maintainers: good-first-issue matching + AI-generated PR filter. Zero third-party runtime deps."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "rzl" }]
+keywords = ["oss", "triage", "github", "good-first-issue", "pull-request", "advisory"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Quality Assurance",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = []
+
+[project.scripts]
+oss-triage = "oss_triage.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/IN-GARLICE-LOCAL/oss-triage"
+Source = "https://github.com/IN-GARLICE-LOCAL/oss-triage"
+Security = "https://github.com/IN-GARLICE-LOCAL/oss-triage/blob/main/SECURITY.md"
+
+[tool.setuptools.packages.find]
+include = ["oss_triage*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

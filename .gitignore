@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# oss-triage outputs (regenerate with the CLI)
+triage.json
+dashboard.html
+*.sarif
+
+# secrets -- never commit tokens
+.env
+*.token
+secrets.json

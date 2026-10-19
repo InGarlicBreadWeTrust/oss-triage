@@ -1,0 +1,4 @@
+[
+  {"handle": "alice", "skills": ["bug", "python", "testing"], "past_merges": 5},
+  {"handle": "erin", "skills": ["docs"], "past_merges": 1}
+]

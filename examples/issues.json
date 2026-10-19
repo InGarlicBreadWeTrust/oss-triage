@@ -1,0 +1,20 @@
+[
+  {
+    "number": 112,
+    "title": "fix off-by-one in pagination",
+    "state": "open",
+    "body": "Steps:\n1) click next on page 1\n\nExpected: page 2 loads\nActual: page 1 shows again\n\n- [ ] add a regression test\n- [ ] assert page index",
+    "html_url": "https://github.com/example/oss-triage-issues/issues/112",
+    "labels": [{"name": "good first issue"}, {"name": "bug"}],
+    "closed_at": null
+  },
+  {
+    "number": 7,
+    "title": "refactor auth to use JWT and refresh tokens",
+    "state": "open",
+    "body": "The whole auth subsystem needs a ground-up rework. Rewire every handler, rotate the token store, and touch session, login, and oauth flows. This is a large architectural change.",
+    "html_url": "https://github.com/example/oss-triage-issues/issues/7",
+    "labels": [{"name": "wontfix"}],
+    "closed_at": null
+  }
+]
