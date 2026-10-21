@@ -44,3 +44,30 @@ model and the list of deliberate design guards.
 Open a new issue with the version (`oss-triage --version`), the command you ran,
 and a redacted copy of any input that triggered the problem. Do **not** paste a
 live `GITHUB_TOKEN`.
+
+---
+
+## Independent security audit (2026-10-21)
+
+**Performed by:** `InGarlicBreadWeTrust` · **Type:** static source + dependency
+review · **Result:** no vulnerabilities found.
+
+**Method:** static review of every `.py` source, the `pyproject.toml` build
+config, and the dependency graph; grep for the runtime-risk surface
+(`subprocess`, `os.system`, `eval`/`exec`/`compile`, `pickle`/`marshal`,
+`ctypes`, sockets/network).
+
+**Findings for `oss-triage`:**
+- No `subprocess`, `os.system`, `exec`, `eval`, `compile`, `pickle`, `marshal`,
+  or `ctypes` present.
+- The **only** network surface is the intentional, opt-in GitHub read: it is
+  **HTTPS-only** (`GHClient` rejects a non-HTTPS base), a token is read from
+  `GITHUB_TOKEN` and **scrubbed from every error path** by `_redact`, and
+  no user data is ever *sent* — only public repo/issue/PR metadata is
+  *fetched*.
+- No hardcoded secrets or credentials.
+- Output-path containment via `guard_output` (refuses to escape the CWD unless
+  `--allow-outside`), covered by `test_output_traversal` / `test_guard_outside`.
+- Build system is stock `setuptools` build-meta with no custom hooks.
+
+**Verdict:** strong posture; no vulnerability found. No code changes required.
