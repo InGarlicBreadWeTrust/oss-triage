@@ -9,7 +9,7 @@ description = "Heuristic triage advisor for OSS maintainers: good-first-issue ma
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "rzl" }]
+authors = [{ name = "InGarlicBreadWeTrust" }]
 keywords = ["oss", "triage", "github", "good-first-issue", "pull-request", "advisory"]
 classifiers = [
     "Programming Language :: Python :: 3",
